@@ -30,6 +30,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
+app.set('ipaddress', (process.env.IP));
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port'), app.get('ipaddress'));
+
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 //  passport mess
