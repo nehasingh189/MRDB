@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 myplaceholder">
+            <br/>
+            <span class="glyphicon glyphicon-user user" aria-hidden=true>
+                  </span><br/>
+            <h1 ng-if="model.isCritic">CRITIC</h1>
+            <a href="#/editprofile" class="btn btn-primary btn-lg"
+               ng-if="model.userProfile._id==model.currentUser._id" role="button">Edit Profile</a>
+            <a href="#/critic" class="btn btn-primary btn-lg"
+               ng-if="model.userProfile._id==model.currentUser._id && !model.isCritic" role="button">Be A Critic</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 myplaceholder">
+            <h1 class="page-header">{{model.userProfile.username}}</h1>
+            <h3>Movies Rated: {{model.userProfile.rates?model.userProfile.rates.length:0}}</h3>
+            <h3></h3>
+            <h3>Movies Reviewed: {{model.userProfile.reviews?model.userProfile.reviews.length:0}}</h3>
+            <button ng-if="model.follow" ng-click="model.followOtherUser()" class="btn btn-primary btn-lg">
+                Follow {{model.userProfile.username}}
+            </button>
+
+            <div  ng-if="model.userProfile._id==model.currentUser._id">
+                <div  ng-if="model.userProfile.follows.length>0">
+                    <h3 class="page-header">Following</h3>
+                    <div class="col-xs-12 col-sm-6" ng-repeat="follow in model.userProfile.follows">
+                        <li>
+                            <h4><a href="#/profile/{{follow.userId}}">{{follow.username}}</a></h4>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 " ng-if="model.userProfile.rates.length>0">
+            <h3 class="page-header" ng-if="model.userProfile._id==model.currentUser._id">My Ratings</h3>
+            <h3 class="page-header" ng-if="model.userProfile._id!=model.currentUser._id">
+                {{model.userProfile.username}}'s Ratings</h3>
+            <div ng-repeat="movie in model.userProfile.rates">
+                <div class="col-xs-12 col-sm-6 movies">
+                    <div class="col-xs-5 col-sm-4">
+                        <a href="#/movie/{{movie.tmdbId}}">
+                            <img class="img img-responsive" ng-src="https://image.tmdb.org/t/p/w92{{movie.imageUrl}}">
+                        </a>
+                    </div>
+                    <div class="col-xs-7 col-sm-8">
+                        <a href="#/movie/{{movie.tmdbId}}">{{movie.name}}</a>
+                        <br/><br/>
+                        <uib-rating ng-model="movie.rating" max=5 read-only="true" ng-class="'rating-star'"></uib-rating>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 " ng-if="model.userProfile.reviews.length>0">
+            <h3 class="page-header" ng-if="model.userProfile._id==model.currentUser._id">My Reviews</h3>
+            <h3 class="page-header" ng-if="model.userProfile._id!=model.currentUser._id">
+                {{model.userProfile.username}}'s Reviews</h3>
+            <div ng-repeat="movie in model.userProfile.reviews">
+                <div class="col-xs-12 col-sm-6 movies">
+                    <div class="col-xs-5 col-sm-4">
+                        <a href="#/movie/{{movie.tmdbId}}">
+                            <img class="img img-responsive" ng-src="https://image.tmdb.org/t/p/w92{{movie.imageUrl}}">
+                        </a>
+                    </div>
+                    <div class="col-xs-7 col-sm-8">
+                        <a href="#/movie/{{movie.tmdbId}}">{{movie.name}}</a><br/>
+                        <br/>
+                        <textarea class="form-control" readonly="readonly">{{movie.review}}</textarea><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

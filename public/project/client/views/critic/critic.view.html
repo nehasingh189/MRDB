@@ -1,0 +1,26 @@
+<div class="col-sm-7 col-sm-offset-2 col-md-6 col-md-offset-2 main">
+    <h2 class="page-header">Critic Application</h2>
+    <div ng-show="model.message" class="alert alert-success" role="alert">{{model.message}}</div>
+    <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Select a Movie</label>
+
+            <div class="dropdown col-sm-offset-4">
+                <select class="form-control" ng-model="model.movie" ng-options="movie as movie.title for movie in model.nowPlaying">
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="review" class="col-sm-4 control-label">Write a Review</label>
+            <textarea class="form-control textarea" rows="10" id="review"
+                      ng-model="model.review" placeholder="Write your review here"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="button col-sm-offset-4">
+                <a href="#/profile" class="btn btn-primary btn-lg">{{model.cancelOrGoBack}}</a>
+                <button ng-if="!model.submitted" ng-click="model.submitCritic()" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

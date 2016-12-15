@@ -1,0 +1,65 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">Admin</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>
+                    <a ng-click="model.order('username')">
+                        Username
+                        <span ng-if="model.predicate === 'username' && model.reverse" class="glyphicon glyphicon-triangle-top" aria-hidden=true></span>
+                        <span ng-if="model.predicate === 'username' && !model.reverse" class="glyphicon glyphicon-triangle-bottom" aria-hidden=true></span>
+                    </a>
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>
+                    <a ng-click="model.order('firstName')">
+                        First Name
+                        <span ng-if="model.predicate === 'firstName' && model.reverse" class="glyphicon glyphicon-triangle-top" aria-hidden=true></span>
+                        <span ng-if="model.predicate === 'firstName' && !model.reverse" class="glyphicon glyphicon-triangle-bottom" aria-hidden=true></span>
+                    </a>
+                </th>
+                <th>
+                    <a ng-click="model.order('lastName')">
+                        Last Name
+                        <span ng-if="model.predicate === 'lastName' && model.reverse" class="glyphicon glyphicon-triangle-top" aria-hidden=true></span>
+                        <span ng-if="model.predicate === 'lastName' && !model.reverse" class="glyphicon glyphicon-triangle-bottom" aria-hidden=true></span>
+                    </a>
+                </th>
+                <th>
+                    Roles
+                </th>
+                <th>Action&nbsp;&nbsp;</th>
+            </tr>
+            <tr>
+                <td><input ng-model="model.user.username" type="text" class="form-control"/></td>
+                <td><input ng-model="model.user.password" type="password" class="form-control"/></td>
+                <td><input ng-model="model.user.firstName" type="text" class="form-control"/></td>
+                <td><input ng-model="model.user.lastName" type="text" class="form-control"/></td>
+                <td><input ng-model="model.user.roles" ng-list type="text" class="form-control"/></td>
+                <td class="nowrap">
+                    <a ng-click="model.addUser(model.user)">
+                        <span class="glyphicon glyphicon-plus" aria-hidden=true></span></a>&nbsp&nbsp
+                    <a ng-click="model.updateUser(model.user)">
+                        <span class="glyphicon glyphicon-ok" aria-hidden=true></span></a></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in model.users | orderBy:model.predicate:model.reverse">
+                <td class="text-left">{{user.username}}</td>
+                <td class="text-left"></td>
+                <td class="text-left">{{user.firstName}}</td>
+                <td class="text-left">{{user.lastName}}</td>
+                <td class="text-left">{{user.roles.join(", ")}}</td>
+                <td class="nowrap">
+                    <a ng-click="model.deleteUser(user)">
+                        <span class="glyphicon glyphicon-remove" aria-hidden=true></span></a>&nbsp&nbsp
+                    <a ng-click="model.selectUser(user)">
+                        <span class="glyphicon glyphicon-cog" aria-hidden=true></span></a>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

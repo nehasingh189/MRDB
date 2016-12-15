@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--This is to make the webpage look good on a phone/tablet i.e. making it responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Star Ratings</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .star-rating s:hover {
+            color: red;
+        }
+        .star-rating s,
+        .star-rating-rtl s {
+            color: black;
+            font-size: 50px;
+            cursor: default;
+            text-decoration: none;
+            line-height: 50px;
+        }
+        .star-rating {
+            padding: 2px;
+        }
+        .star-rating-rtl {
+            background: #555;
+            display: inline-block;
+            border: 2px solid #444;
+        }
+        .star-rating-rtl s {
+            color: yellow;
+        }
+        .star-rating s:hover:before{
+            content: "\2605";
+        }
+        .star-rating s:before {
+            content: "\2606";
+        }
+        .star-rating-rtl s:hover:after{
+            content: "\2605";
+        }
+        .star-rating-rtl s:after {
+            content: "\2606";
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script>
+        $(function() {
+            $("div.star-rating > s, div.star-rating-rtl > s").on("click", function(e) {
+                var numStars = $(e.target).parentsUntil("div").length+1;
+                alert(numStars + (numStars == 1 ? " star" : " stars!"));
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="star-rating"><s><s><s><s><s></s></s></s></s></s></div>
+<div class="star-rating-rtl"><s><s><s><s><s></s></s></s></s></s></div>
+</body>
+</html>

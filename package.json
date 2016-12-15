@@ -1,0 +1,54 @@
+{
+  "name": "OpenShift-Sample-App",
+  "version": "1.0.0",
+  "description": "OpenShift Sample Application",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "OpenShift",
+    "email": "ramr@example.org",
+    "url": "http://www.openshift.com/"
+  },
+  "homepage": "http://www.openshift.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openshift/origin-server"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "angular-ui-bootstrap": "^1.2.5",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^3.4.8",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.10",
+    "multer": "^1.1.0",
+    "node-uuid": "^1.4.7",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "q": "^1.4.1",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^1.11.3"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js"
+}

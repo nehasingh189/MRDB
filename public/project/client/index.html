@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mrdb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--This is to make the webpage look good on a phone/tablet i.e. making it responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>MRDB</title>
+    <link rel="icon" href="images/favicon.jpg">
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="externalFiles/ui-bootstrap-custom-tpls-1.2.5.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <script src="views/main/main.controller.js"></script>
+    <script src="services/movieapi.service.js"></script>
+    <script src="services/movie.service.client.js"></script>
+    <script src="services/critic.service.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+
+    <script src="views/header/header.controller.js"></script>
+    <script src="views/home/home.controller.js"></script>
+    <script src="views/search/movie-search.controller.js"></script>
+    <script src="views/search/usersearch.controller.js"></script>
+    <script src="views/movie/movie.controller.js"></script>
+    <script src="views/cast/cast.controller.js"></script>
+    <script src="views/users/registerUser.controller.js"></script>
+    <script src="views/users/login.controller.js"></script>
+    <script src="views/users/profile.controller.js"></script>
+    <script src="views/users/profileEdit.controller.js"></script>
+    <script src="views/critic/critic.controller.js"></script>
+    <script src="views/admin/admin.controller.js"></script>
+    <script src="views/search/movie-genre.controller.js"></script>
+    <script src="views/search/movie-genre.view.html"></script>
+</head>
+<body ng-controller="MainController">
+<div ng-include="'views/header/header.view.html'"></div>
+<div ng-view >
+
+</div>
+
+</body>
+</html>

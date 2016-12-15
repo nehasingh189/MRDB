@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 myplaceholder">
+            <img class="img img-responsive profile" ng-src="https://image.tmdb.org/t/p/w396{{model.actor.profile_path}}">
+        </div>
+        <div class="col-xs-12 col-sm-6 myplaceholder">
+            <h1 class="page-header">{{model.actor.name}}</h1>
+            <h2>Actor</h2>
+            <h2></h2>
+            <h3>Birthday: {{model.actor.birthday | date:'MMM d, y' }}</h3>
+            <h3></h3>
+            <h3>Place of Birth: {{model.actor.place_of_birth}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+            <h2 class="page-header">Biography</h2>
+            <p>{{model.actor.biography}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+            <h2 class="page-header">Best Known For</h2>
+            <h2></h2>
+            <ul class="list-inline">
+                <li class="w92" ng-repeat="movie in model.actor.movie_credits.cast" ng-if="movie.poster_path">
+                    <a href="#/movie/{{movie.id}}">
+                        <img ng-src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"></a>
+                    <a class="title" href="#/movie/{{movie.id}}">{{movie.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

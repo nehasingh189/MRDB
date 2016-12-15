@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<div class="jumbotron">
+    <h1 class="text-center">My Project</h1>
+</div>-->
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <script>
+        var apikey = "a1aa62ec3ff2b05c1b0e804adce79c24";
+        var baseUrl = "https://api.themoviedb.org/3";
+
+        // construct the uri with our apikey
+        var moviesSearchUrl = baseUrl + '/movie/now_playing?api_key=' + apikey;
+
+
+        $(document).ready(function() {
+
+            // send off the query
+            $.ajax({
+                url: moviesSearchUrl,
+                success: searchCallback1
+            });
+        });
+
+        // callback for when we get back the results
+        function searchCallback(movie) {
+            /*$(document.body).append('Found ' + data.total + ' results for ');*/
+            $(document.body).append('<h1>' + movie.imdb_id + '</h1>');
+            $(document.body).append('<h2>' + movie.title + '</h2>');
+            $(document.body).append('<img src="' + baseUrl + movie.poster_path + '?api_key='+ apikey + '" />');
+            $(document.body).append('<p>' + movie.overview + '</p>');
+        }
+
+        function searchCallback1(data) {
+            $(document.body).append('Found ' + data.results.length + ' results for upcoming movies');
+            var movies = data.results;
+            $.each(movies, function(index, movie) {
+                $(document.body).append('<h2>' + 'Movie Title: ' + movie.title + '</h2>');
+                $(document.body).append('<h4>' + 'Releases On: ' + movie.release_date+ '</h4>');
+                //use w300, w392 etc for different sizes
+                $(document.body).append('<img src="' + 'http://image.tmdb.org/t/p/w92' + movie.poster_path + '?api_key='+ apikey + '" />');
+                $(document.body).append('<p>' + 'Synopsis: ' + movie.overview + '</p>');
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

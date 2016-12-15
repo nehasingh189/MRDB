@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 class="page-header">Admin</h2>
+    <h4 ng-if="!model.critics.length">No reviews to approve</h4>
+    <div class="table-responsive" ng-if="model.critics.length">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>User</th>
+                <th>Movie</th>
+                <th>Review</th>
+                <th>Accept</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="critic in model.critics">
+                <td>{{critic.username}}</td>
+                <td>{{critic.title}}</td>
+                <td>{{critic.review}}</td>
+                <td class="nowrap">
+                    <button type="button" ng-click="model.accept(critic)" class="btn btn-success btn-sm">Yes</button>
+                    <button type="button" ng-click="model.reject(critic)" class="btn btn-danger btn-sm">No</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

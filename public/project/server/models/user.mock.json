@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "123",
+    "firstName": "Alice",
+    "lastName": "Wonderland",
+    "username": "alice",
+    "password": "alice",
+    "roles": ["user"]
+  },
+  {
+    "_id": "234",
+    "firstName": "Bob",
+    "lastName": "Hope",
+    "username": "bob",
+    "password": "bob",
+    "roles": ["critic", "user"]
+  },
+  {
+    "_id": "345",
+    "firstName": "Neha",
+    "lastName": "Sing",
+    "username": "neha",
+    "password": "neha",
+    "roles": ["critic", "user", "admin"]
+  },
+  {
+    "_id": "456",
+    "firstName": "Dan",
+    "lastName": "Craig",
+    "username": "dan",
+    "password": "dan",
+    "roles": ["critic", "user"]
+  },
+  {
+    "_id": "567",
+    "firstName": "Edward",
+    "lastName": "Norton",
+    "username": "ed",
+    "password": "ed",
+    "roles": ["user"]
+  }
+]

@@ -1,0 +1,26 @@
+<div class="col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 main">
+    <h1 class="page-header">Search Results for {{model.query}}</h1>
+    <div class="row placeholders">
+        <div class="col-xs-12 col-sm-6 col-md-6 placeholder" ng-repeat="movie in model.movies" ng-if="movie.poster_path">
+            <div class="thumbnail">
+                <div class="embed-responsive embed-responsive-4by3">
+                        <a ng-if="!movie.video_url" href="#/movie/{{movie.id}}">
+                        <img ng-src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+                    </a>
+                </div>
+                <div class="caption">
+                    <a href="#/movie/{{movie.id}}"><h4 class="smallheader">{{movie.title| limitTo:30}}</h4></a>
+                    <h5>Release Date: {{movie.release_date | date:'MMM d, y' }}</h5>
+                    <h4 class="smallheader">
+                        <span ng-repeat="id in movie.genre_ids | limitTo:2">
+                            <span class="label label-default label-as-badge" >
+                                {{model.genreName(id)}}
+                            </span>&nbsp;&nbsp;
+                        </span>
+                        <br ng-if="movie.genre_ids.length==0"/>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
