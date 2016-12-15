@@ -25,12 +25,11 @@ app.use(
     session({ secret: process.env.PASSPORT_SECRET,
     resave: true,
     saveUninitialized: true}));
-app.use(cookieParser());
+app.use(cookieParser('nehasingh'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
+
 
 app.set('ipaddress', (process.env.IP));
 app.set('port', (process.env.PORT || 3000));
