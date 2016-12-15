@@ -73,11 +73,8 @@ module.exports = function(db, mongoose) {
                 if (err) {
                     deferred.reject(err);
                 }
-                // if there's a movie
                 if (doc) {
-                    // add user to reviews
                     doc.reviews.push ({"userId": userId, "username": username, "text": review, "isCritic": isCritic});
-                    // add user to reviewedByUsers
                     doc.reviewedByUsers.push (userId);
                     doc.save(function(err, doc){
                         if (err) {
@@ -88,8 +85,7 @@ module.exports = function(db, mongoose) {
                     });
                 }
                 else {
-                    // if there's no movie, create a new instance
-                    movie = new Movie({
+                     movie = new Movie({
                         "tmdbId": tmdbId,
                         "title": movie.title,
                         "imageUrl": movie.poster_path,
@@ -99,11 +95,8 @@ module.exports = function(db, mongoose) {
                         "reviews": [],
                         "reviewedByUsers": []
                     });
-                    // add user to reviews
                     movie.reviews.push ({"userId": userId, "username": username, "text": review, "isCritic": isCritic});
-                    // add user to reviewedByUsers
                     movie.reviewedByUsers.push (userId);
-                    // save new instance
                     movie.save(function(err, doc) {
                         if (err) {
                             deferred.reject(err);

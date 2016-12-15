@@ -41,12 +41,7 @@ var ProjectUserSchema = require("./public/project/server/models/user.schema.serv
 var ProjectUser = mongoose.model("ProjectUser", ProjectUserSchema);
 var ProjectUserModel = require('./public/project/server/models/user.model.js')(db, mongoose, ProjectUser);
 
-var AssignmentUserSchema = require("./public/assignment/server/models/user.schema.server.js")(mongoose);
-var AssignmentUser = mongoose.model("AssignmentUser", AssignmentUserSchema);
-var AssignmentUserModel = require('./public/assignment/server/models/user.model.js')(db, mongoose, AssignmentUser);
 
-require("./public/security/security.js")(app, ProjectUserModel, AssignmentUserModel, passport);
-
-require("./public/assignment/server/app.js")(app, db, mongoose, passport, AssignmentUserModel);
+require("./public/security/security.js")(app, ProjectUserModel, passport);
 require("./public/project/server/app.js")(app, db, mongoose, passport, ProjectUserModel);
 app.listen(port, ipaddress);
