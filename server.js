@@ -11,11 +11,11 @@ var connectionString = process.env.MONGODB_URI||'mongodb://nehasingh189:nehasing
 
 var db = mongoose.connect(connectionString);
 
-    connectionString = process.env.MLAB_DB_URL_INIT +
-        process.env.MLAB_DB_USERNAME + ":" +
-        process.env.MLAB_DB_PASSWORD +
-        process.env.MLAB_DB_URL_END + '/' +
-        process.env.MLAB_DB_NAME;
+connectionString = process.env.MLAB_DB_URL_INIT +
+    process.env.MLAB_DB_USERNAME + ":" +
+    process.env.MLAB_DB_PASSWORD +
+    process.env.MLAB_DB_URL_END + '/' +
+    process.env.MLAB_DB_NAME;
 
 
 app.use(bodyParser.json());// for parsing application/json
@@ -23,9 +23,9 @@ app.use(bodyParser.urlencoded({ extended: true }));// for parsing application/x-
 app.use(multer());
 app.use(
     session({ secret: process.env.PASSPORT_SECRET,
-    resave: true,
-    saveUninitialized: true}));
-app.use(cookieParser('nehasingh'));
+        resave: true,
+        saveUninitialized: true}));
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));

@@ -29,6 +29,7 @@
 
         <div id="searchByGenre" class="col-sm-3 col-md-3">
                 <select  class="form-control" ng-model="genrequery" ng-change="submitmoviegenre()" >
+                    <option selected disabled value="">Choose Genre</option>
                     <option ng-repeat="genre in Genre"
                             ng-selected="{{genre.selected == true}}"
                             name="genrequery" value="{{genre.id}}">

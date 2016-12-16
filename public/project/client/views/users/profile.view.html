@@ -1,31 +1,36 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-sm-4 myplaceholder">
+        <div class="col-xs-12 col-sm-4 myplaceholder moveRight">
             <br/>
-            <span class="glyphicon glyphicon-user user" aria-hidden=true>
-                  </span><br/>
+            <img src="images/user.png" class="img img-rounded">
+            </img><br/>
             <h1 ng-if="model.isCritic">CRITIC</h1>
-            <a href="#/editprofile" class="btn btn-primary btn-lg"
-               ng-if="model.userProfile._id==model.currentUser._id" role="button">Edit Profile</a>
-            <a href="#/critic" class="btn btn-primary btn-lg"
-               ng-if="model.userProfile._id==model.currentUser._id && !model.isCritic" role="button">Be A Critic</a>
+            <div class="moveButton">
+                <a href="#/editprofile" class="btn btn-primary btn-lg postButtons buttonText"
+                   ng-if="model.userProfile._id==model.currentUser._id" role="button">Edit Profile</a>
+                <a href="#/critic" class="btn btn-primary btn-lg postButtons buttonText"
+                   ng-if="model.userProfile._id==model.currentUser._id && !model.isCritic" role="button">Be A Critic</a>
+            </div>
         </div>
         <div class="col-xs-12 col-sm-6 myplaceholder">
             <h1 class="page-header">{{model.userProfile.username}}</h1>
             <h3>Movies Rated: {{model.userProfile.rates?model.userProfile.rates.length:0}}</h3>
             <h3></h3>
             <h3>Movies Reviewed: {{model.userProfile.reviews?model.userProfile.reviews.length:0}}</h3>
-            <button ng-if="model.follow" ng-click="model.followOtherUser()" class="btn btn-primary btn-lg">
+            <a ng-if="model.follow" ng-click="model.followOtherUser()" class="btn btn-primary postButtons ">
+                <i class="glyphicon glyphicon-pushpin"></i>
                 Follow {{model.userProfile.username}}
-            </button>
+            </a>
 
             <div  ng-if="model.userProfile._id==model.currentUser._id">
                 <div  ng-if="model.userProfile.follows.length>0">
                     <h3 class="page-header">Following</h3>
-                    <div class="col-xs-12 col-sm-6" ng-repeat="follow in model.userProfile.follows">
+                    <div class="col-xs-12 col-sm-12" ng-repeat="follow in model.userProfile.follows">
+                        <h4>
                         <li>
-                            <h4><a href="#/profile/{{follow.userId}}">{{follow.username}}</a></h4>
+                            <a href="#/profile/{{follow.userId}}">{{follow.username}}</a>
                         </li>
+                        </h4>
                     </div>
                 </div>
             </div>

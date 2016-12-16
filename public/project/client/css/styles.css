@@ -51,6 +51,32 @@ h1{
 }
 .main .page-header {
     margin-top: 0;
+    color: #00897B !important;
+}
+.page-header{
+    color: #00897B !important;
+}
+.postButtons{
+    background-color: #00897B !important;
+    border-color: #00897B !important;
+    margin-top: 5px;
+    color: white !important;
+}
+.glypColor{
+    color: #00897B !important;
+}
+.removePadding{
+    padding: 0px;
+}
+.buttonText{
+    font-size: 15px;
+}
+
+.moveRight{
+    padding-left: 60px;
+}
+.moveButton{
+    padding-left: 25px;
 }
 
 /*
@@ -83,7 +109,9 @@ h1{
 
     text-align: center;
 }
-
+.goUp{
+    margin-top: -4px;
+}
 #search-banners{
     text-decoration: underline;
     text-align: center;

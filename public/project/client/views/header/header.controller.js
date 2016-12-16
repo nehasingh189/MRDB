@@ -40,7 +40,7 @@
 
 
             function submitmoviegenre(){
-            console.log("in serch by genre!!!");
+
             if($scope.genrequery){
                 $location.url("/searchByGenre/" + $scope.genrequery);
                 $scope.query = '';
@@ -50,7 +50,6 @@
 
 
         $scope.Genre =[
-            {id:0, name : 'MOVIE GENRE'},
             {id:28,name:'Action'},
             {id:12, name:'Adventure'},
             {id:35, name:'Comedy'},

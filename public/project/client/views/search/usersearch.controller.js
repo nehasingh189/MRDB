@@ -34,7 +34,7 @@
             promise
                 .success(function(user){
                     $location.url("/profile/"+user._id);
-                    console.log("/profile/"+user._id);
+
 
 
 

@@ -29,7 +29,7 @@
         }
 
         function accept(critic) {
-            console.log(critic);
+
             //remove from critic table
             CriticService
                 .deleteCritic(critic._id)
