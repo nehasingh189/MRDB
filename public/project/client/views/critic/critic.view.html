@@ -17,9 +17,9 @@
                       ng-model="model.review" placeholder="Write your review here"></textarea>
         </div>
         <div class="form-group">
-            <div class="button col-sm-offset-4">
-                <a href="#/profile" class="btn btn-primary btn-lg">{{model.cancelOrGoBack}}</a>
-                <button ng-if="!model.submitted" ng-click="model.submitCritic()" class="btn btn-primary btn-lg">Submit</button>
+            <div class="button col-sm-offset-4 pull-right">
+                <a href="#/profile" class="btn btn-danger whiteButton">{{model.cancelOrGoBack}}</a>
+                <button ng-if="!model.submitted" ng-click="model.submitCritic()" class="btn postButtons">Submit</button>
             </div>
         </div>
     </div>
