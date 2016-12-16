@@ -30,13 +30,5 @@
     "username": "dan",
     "password": "dan",
     "roles": ["critic", "user"]
-  },
-  {
-    "_id": "567",
-    "firstName": "Edward",
-    "lastName": "Norton",
-    "username": "ed",
-    "password": "ed",
-    "roles": ["user"]
   }
 ]

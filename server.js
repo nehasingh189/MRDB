@@ -7,7 +7,7 @@ var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
 var mongoose      = require('mongoose');
 
-var connectionString = process.env.MONGODB_URI||'mongodb://127.0.0.1/test';
+var connectionString = process.env.MONGODB_URI||'mongodb://nehasingh189:nehasingh189@ds133328.mlab.com:33328/mrdb';
 
 var db = mongoose.connect(connectionString);
 
@@ -37,7 +37,7 @@ app.listen(app.get('port'), app.get('ipaddress'));
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
-//  passport mess
+
 var ProjectUserSchema = require("./public/project/server/models/user.schema.server.js")(mongoose);
 var ProjectUser = mongoose.model("ProjectUser", ProjectUserSchema);
 var ProjectUserModel = require('./public/project/server/models/user.model.js')(db, mongoose, ProjectUser);

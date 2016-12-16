@@ -5,6 +5,11 @@
 /* Move down content in body */
 body {
     padding-top: 100px;
+    background-color: #f1f1f1;
+    font-weight: 100;
+}
+h1{
+    color: #00897B;
 }
 
 @media (max-width: 768px) {
@@ -75,7 +80,7 @@ body {
 }
 
 #search-banners-1{
-    text-decoration: underline;
+
     text-align: center;
 }
 
@@ -113,7 +118,9 @@ body {
     color: white;
 }
 
-
+a{
+    color: #00897B !important;
+}
 
 /*To offset the searchbar */
 #logo {
@@ -157,7 +164,9 @@ body {
     border-radius: 1em;
 
 }
-
+.label-default{
+    background-color: #00897B !important;
+}
 /*Star rating*/
 .star-rating {
     font-size: 0px;
@@ -234,10 +243,51 @@ h4.smallheader {
 
 
 .thumbnail {
-    background-color: black;
+    background-color: white;
+    border-radius: 0px;
 }
-
-
+.logoPosition{
+    margin-top: -24px;
+    margin-right: 5px;
+}
+.navbarColor{
+    background-color: #00897B;
+    color: white !important;
+}
+.navbarText{
+    text-decoration: none;
+    color: white !important;
+    margin-left: -10px;
+}
+.imagePosition{
+    padding-top: 30px;
+    padding-left: 70px;
+}
+.label-as-badge{
+    border-radius: 3px !important;
+}
+.rightMargin{
+    margin-right: 10px;
+}
+.movieContent{
+    padding-top: 5px;
+    color: #00897B;
+}
+.navbarText:hover{
+    background-color: #00897B !important;
+    color: white !important;
+    text-decoration: none;
+}
+.navbarText:active{
+    background-color: #00897B !important;
+    color: white !important;
+    text-decoration: none;
+}
+.navbarText:focus{
+    background-color: #00897B !important;
+    color: white !important;
+    text-decoration: none;
+}
 @media (max-width: 768px) {
     .profile-outer {
         padding-left: 10px;

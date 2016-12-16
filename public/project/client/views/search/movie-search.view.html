@@ -1,7 +1,7 @@
 <div class="col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 main">
     <h1 class="page-header">Search Results for {{model.query}}</h1>
     <div class="row placeholders">
-        <div class="col-xs-12 col-sm-6 col-md-6 placeholder" ng-repeat="movie in model.movies" ng-if="movie.poster_path">
+        <div class="col-xs-12 col-sm-3 col-md-3 placeholder" ng-repeat="movie in model.movies" ng-if="movie.poster_path">
             <div class="thumbnail">
                 <div class="embed-responsive embed-responsive-4by3">
                         <a ng-if="!movie.video_url" href="#/movie/{{movie.id}}">

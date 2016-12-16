@@ -4,7 +4,7 @@
         .module("mrdb")
         .controller("CriticController", CriticController);
 
-    function CriticController(UserService, TmdbApiService, CriticService) {
+    function CriticController(UserService, MovieApiService, CriticService) {
         var vm = this;
         vm.error = null;
         vm.message = null;
@@ -17,7 +17,7 @@
                 .then(function (response) {
                     vm.currentUser = response.data;
                 });
-            TmdbApiService
+            MovieApiService
                 .getNowPlaying()
                 .then(function(response){
                     vm.nowPlaying = response.data.results;

@@ -7,7 +7,6 @@ module.exports = function(mongoose) {
         title: String,
         review: String
 
-        // store critic documents in this collection
     }, {collection: 'project.critic'});
     return CriticSchema;
 };
